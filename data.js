@@ -566,6 +566,19 @@ const breakfastBeveragesMenu = [
 
 // COMMENTS
 
+const askMessages = [
+      "BIENVENIDO. ELIGE HORA DE COMER",
+      "ELIGE PLATO PRINCIPAL",
+      "PERSONALIZAR PLATO PRINCIPAL?",
+      "EL PRECIO ES (precio)$. ELIGE PRIMER ACOMPAÑANTE",
+      "PERSONALIZAR PRIMER ACOMPAÑANTE?",
+      "EL PRECIO ES (precio)$. ELIGE SEGUNDO ACOMPAÑANTE",
+      "PERSONALIZAR SEGUNDO ACOMPAÑANTE?",
+      "EL PRECIO ES (precio)$. ELIGE LA BEBIDA",
+      "EL PRECIO TOTAL ES (precio)$. QUE APROVECHE"
+]
+
+
 const simpleComments = [
       "COMENTARIO 1",
       "COMENTARIO 2",
@@ -577,7 +590,7 @@ const simpleComments = [
 ]
 
 
-const complexComments = [
+const complexComments_AB = [
       "(A) y (B) COMENTARIO 1",
       "(A) y (B) COMENTARIO 2",
       "(A) y (B) COMENTARIO 3",
@@ -585,6 +598,17 @@ const complexComments = [
       "(A) y (B) COMENTARIO 5",
       "(A) y (B) COMENTARIO 6",
       "(A) y (B) COMENTARIO 7",
+]
+
+
+const complexComments_ABC = [
+      "(A) y (C) COMENTARIO 1",
+      "(A) y (C) COMENTARIO 2",
+      "(A) y (C) COMENTARIO 3",
+      "(A) y (C) COMENTARIO 4",
+      "(A) y (C) COMENTARIO 5",
+      "(A) y (C) COMENTARIO 6",
+      "(A) y (C) COMENTARIO 7",
 ]
 
 
