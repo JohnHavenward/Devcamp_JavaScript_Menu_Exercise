@@ -7,21 +7,21 @@ const askMessages = [
       "EL MENÚ CONSTA DE UN PLATO PRINCIPAL  Y DOS ACOMPAÑANTES. ¿CUAL DE LOS SIGUIENTES PLATOS PRINCIPALES QUIERES ELEGIR?",
       "SI LO DESEAS PUEDES MODIFICAR EL PLATO POR UN PEQUEÑO COSTE AÑADIDO.",
       "EL PRECIO DEL PLATO SERÍA (precio). ¿QUÉ ACOMPAÑANTE TE GUSTARÍA ELEGIR?",
-      "¿TE GUSTARÍA HACER ALGÚN CAMBIO A ESTE ACOMPAÑANTE?",
-      "ESTE ACOMPAÑANTE SERÍA (precio). ¿CUAL TE GUSTARÍA QUE SEA EL OTRO?",
+      "¿TE GUSTARÍA HACER ALGUNA MODIFICACIÓN?",
+      "ESTE ACOMPAÑANTE SERÍA (precio). ELIGE EL SEGUNDO.",
       "¿TE GUSTARÍA REALIZAR ALGUNA MODIFICACIÓN?",
-      "SU PRECIO SERÍA (precio). Y POR ÚLTIMO YA, ¿QUÉ TE GUSTARÍA TOMAR PARA BEBER?",
+      "SU PRECIO SERÍA (precio). Y PARA TERMINAR, ¿QUÉ TE GUSTARÍA TOMAR PARA BEBER?",
       "EL PRECIO TOTAL SERÍA (precio). ESPERO QUE DISFRUTES DE LA COMIDA Y LA ESTANCIA EN NUESTRO RESTAURANTE. ¡BUEN PROVECHO!"
 ]
 
 
 const simpleComments = [
+      "BUENA ELECCIÓN.",
+      "SEGURO QUE TE ENCANTA.",
       "ES MI OPCIÓN FAVORITA  DE LA CARTA.",
       "BUENA ELECCIÓN, SEGURO QUE TE GUSTA MUCHO.",
       "ACABAMOS DE AÑADIR ESA OPCIÓN A LA CARTA Y ESTÁ GUSTANDO MUCHO.",
       "ESPERO QUE TENGAS MUCHA HAMBRE PORQUE LA RACIÓN ES MUY GRANDE.",
-      "BUENA ELECCIÓN.",
-      "SEGURO QUE TE ENCANTA.",
       "ACABAMOS DE MEJORAR LA RECETA Y ESTÁ TENIENDO MUCHO ÉXITO.",
       "ESA ES UNA ELECCIÓN MUY POPULAR ENTRE NUESTROS CLIENTES.",
       "MUCHOS CLIENTES SIEMPRE HACEN ESA ELECCIÓN CADA VEZ QUE NOS VISITAN."
@@ -40,7 +40,7 @@ const complexComments_ABC = [
       "(B) Y (C) SON BUENOS ACOMPAÑANTES PARA (A).",
       "(A), (B) Y (C) SON UNA DE LAS COMBINACIONES MÁS POPULARES ENTRE NUESTROS CLIENTES.",
       "(B) Y (C) SON LOS ACOMPAÑANTES QUE MÁS GUSTAN.",
-      "(C) ES UN ACIERTO PARA ACOMPAÑAR A (A) "
+      "(C) ES UN ACIERTO PARA ACOMPAÑAR A (A)."
 ]
 
 
@@ -52,18 +52,28 @@ const complexComments_ABC = [
 const mainMenu = [
       {
             name: "HAMBURGUESA COMPLETA",
-            price: 1.5,
-            nightPrice: 2.5,
+            price: 10.5,
+            nightPrice: 13,
             customOptions: [
                   {
                         name: "EXTRA DE QUESO",
                         price: 1,
-                        nightPrice: 5
+                        nightPrice: 2
+                  },
+                  {
+                        name: "AÑADIR HUEVO FRITO",
+                        price: 1.5,
+                        nightPrice: 2
+                  },
+                  {
+                        name: "AÑADIR SALSA PICANTE",
+                        price: 1,
+                        nightPrice: 1.5
                   },
                   {
                         name: "HACERLA DOBLE",
-                        price: 2,
-                        nightPrice: 5
+                        price: 4,
+                        nightPrice: 5.5
                   },
                   {
                         name: "NO, GRACIAS",
@@ -72,18 +82,23 @@ const mainMenu = [
       },
       {
             name: "ENSALADA CÉSAR",
-            price: 2,
-            nightPrice: 3,
+            price: 8,
+            nightPrice: 9.5,
             customOptions: [
                   {
-                        name: "CON CEBOLLA FRITA",
+                        name: "EXTRA DE POLLO",
+                        price: 2,
+                        nightPrice: 3
+                  },
+                  {
+                        name: "AÑADIR CEBOLLA FRITA",
                         price: 1,
-                        nightPrice: 5
+                        nightPrice: 1.5
                   },
                   {
                         name: "CON SALSA DE MIEL-MOSTAZA",
                         price: 2,
-                        nightPrice: 5
+                        nightPrice: 2.5
                   },
                   {
                         name: "NO, GRACIAS",
@@ -92,18 +107,18 @@ const mainMenu = [
       },
       {
             name: "COSTILLAS DE CERDO AHUMADAS",
-            price: 2.5,
-            nightPrice: 3.5,
+            price: 15.5,
+            nightPrice: 18,
             customOptions: [
                   {
                         name: "CON MIEL",
-                        price: 1,
-                        nightPrice: 5
+                        price: 2,
+                        nightPrice: 3
                   },
                   {
                         name: "CON SALSA BARBACOA",
-                        price: 2,
-                        nightPrice: 5
+                        price: 2.5,
+                        nightPrice: 3.5
                   },
                   {
                         name: "NO, GRACIAS",
@@ -112,18 +127,23 @@ const mainMenu = [
       },
       {
             name: "BOCADILLO DE PECHUGA Y QUESO",
-            price: 3,
-            nightPrice: 4,
+            price: 9,
+            nightPrice: 11.5,
             customOptions: [
                   {
-                        name: "CUSTOMIZAR D1",
-                        price: 1,
-                        nightPrice: 5
+                        name: "AÑADIR BACON",
+                        price: 2,
+                        nightPrice: 3
                   },
                   {
-                        name: "CUSTOMIZAR D2",
+                        name: "AÑADIR LECHUGA",
+                        price: 1,
+                        nightPrice: 1.5
+                  },
+                  {
+                        name: "AÑADIR TOMATE",
                         price: 2,
-                        nightPrice: 5
+                        nightPrice: 2.5
                   },
                   {
                         name: "NO, GRACIAS",
@@ -132,18 +152,18 @@ const mainMenu = [
       },
       {
             name: "SANDWICH VEGETAL",
-            price: 3,
-            nightPrice: 4,
+            price: 7,
+            nightPrice: 8.5,
             customOptions: [
                   {
-                        name: "CUSTOMIZAR E1",
-                        price: 1,
-                        nightPrice: 5
+                        name: "HACERLO GRANDE",
+                        price: 2,
+                        nightPrice: 3
                   },
                   {
-                        name: "CUSTOMIZAR E2",
-                        price: 2,
-                        nightPrice: 5
+                        name: "EXTRA DE QUESO",
+                        price: 1,
+                        nightPrice: 2
                   },
                   {
                         name: "NO, GRACIAS",
@@ -152,18 +172,18 @@ const mainMenu = [
       },
       {
             name: "PIZZA CARBONARA",
-            price: 3,
-            nightPrice: 4,
+            price: 10.5,
+            nightPrice: 12.5,
             customOptions: [
                   {
                         name: "HACERLA GRANDE",
-                        price: 1,
+                        price: 4,
                         nightPrice: 5
                   },
                   {
-                        name: "CUSTOMIZAR F2",
+                        name: "EXTRA DE BACON",
                         price: 2,
-                        nightPrice: 5
+                        nightPrice: 3
                   },
                   {
                         name: "NO, GRACIAS",
@@ -176,18 +196,23 @@ const mainMenu = [
 const sidesMenu = [
       {
             name: "NACHOS GRATINADOS",
-            price: 1.5,
-            nightPrice: 2.5,
+            price: 4.5,
+            nightPrice: 5.5,
             customOptions: [
                   {
                         name: "RACIÓN GRANDE",
-                        price: 1,
-                        nightPrice: 5
+                        price: 2,
+                        nightPrice: 3
                   },
                   {
-                        name: "CUSTOMIZAR A2",
-                        price: 2,
-                        nightPrice: 5
+                        name: "AÑADIR JALAPEÑOS",
+                        price: 1.5,
+                        nightPrice: 2.5
+                  },
+                  {
+                        name: "AÑADIR CEBOLLA FRITA",
+                        price: 1,
+                        nightPrice: 1.5
                   },
                   {
                         name: "NO, GRACIAS",
@@ -200,12 +225,17 @@ const sidesMenu = [
             nightPrice: 3,
             customOptions: [
                   {
-                        name: "CUSTOMIZAR B1",
+                        name: "AÑADIR SALSA DE MIEL-MOSTAZA",
                         price: 1,
+                        nightPrice: 1.5
+                  },
+                  {
+                        name: "AÑADIR SALSA BARBACOA",
+                        price: 2,
                         nightPrice: 5
                   },
                   {
-                        name: "CUSTOMIZAR B2",
+                        name: "AÑADIR SALSA BARBACOA",
                         price: 2,
                         nightPrice: 5
                   },
@@ -216,18 +246,18 @@ const sidesMenu = [
       },
       {
             name: "ALITAS DE POLLO",
-            price: 2.5,
-            nightPrice: 3.5,
+            price: 5.5,
+            nightPrice: 6.5,
             customOptions: [
                   {
                         name: "RACIÓN GRANDE",
-                        price: 1,
-                        nightPrice: 5
+                        price: 2.5,
+                        nightPrice: 3
                   },
                   {
                         name: "CON SALSA BARBACOA",
-                        price: 2,
-                        nightPrice: 5
+                        price: 1.5,
+                        nightPrice: 2
                   },
                   {
                         name: "NO, GRACIAS",
@@ -241,18 +271,18 @@ const sidesMenu = [
             customOptions: [
                   {
                         name: "RACIÓN GRANDE",
-                        price: 1,
-                        nightPrice: 5
+                        price: 1.5,
+                        nightPrice: 2.5
                   },
                   {
                         name: "CON SALSA PICANTE",
-                        price: 2,
-                        nightPrice: 5
+                        price: 1,
+                        nightPrice: 1.5
                   },
                   {
                         name: "CON SALSA BARBACOA",
-                        price: 2,
-                        nightPrice: 5
+                        price: 1,
+                        nightPrice: 1.5
                   },
                   {
                         name: "NO, GRACIAS",
@@ -280,19 +310,19 @@ const sidesMenu = [
             ]
       },
       {
-            name: "PURÉ DE PATATA",
-            price: 3,
-            nightPrice: 4,
+            name: "SALCHICHA A LA BRASA",
+            price: 3.5,
+            nightPrice: 4.5,
             customOptions: [
                   {
-                        name: "CUSTOMIZAR F1",
-                        price: 1,
-                        nightPrice: 5
+                        name: "DOS UNIDADES",
+                        price: 2,
+                        nightPrice: 3
                   },
                   {
-                        name: "CUSTOMIZAR F2",
-                        price: 2,
-                        nightPrice: 5
+                        name: "RELLENA DE QUESO",
+                        price: 1.5,
+                        nightPrice: 2
                   },
                   {
                         name: "NO, GRACIAS",
@@ -348,11 +378,11 @@ const breakfastMainMenu  = [
             customOptions: [
                   {
                         name: "HACERLOS REVUELTOS",
-                        price: 1
+                        price: 0.5
                   },
                   {
-                        name: "CUSTOMIZAR A2",
-                        price: 2
+                        name: "EXTRA DE BACON",
+                        price: 1
                   },
                   {
                         name: "NO, GRACIAS",
@@ -368,8 +398,8 @@ const breakfastMainMenu  = [
                         price: 1
                   },
                   {
-                        name: "CON NATA MONTADA",
-                        price: 2
+                        name: "AÑADIR NATA MONTADA",
+                        price: 1.5
                   },
                   {
                         name: "NO, GRACIAS",
@@ -381,12 +411,20 @@ const breakfastMainMenu  = [
             price: 5.5,
             customOptions: [
                   {
+                        name: "AÑADIR HELADO DE MANGO",
+                        price: 2.5
+                  },
+                  {
                         name: "AÑADIR SALSA DE ARÁNDANOS",
                         price: 1
                   },
                   {
-                        name: "CUSTOMIZAR C2",
-                        price: 2
+                        name: "AÑADIR SIROPE DE CHOCOLATE",
+                        price: 0.5
+                  },
+                  {
+                        name: "AÑADIR SIROPE DE FRESA",
+                        price: 0.5
                   },
                   {
                         name: "NO, GRACIAS",
@@ -398,11 +436,11 @@ const breakfastMainMenu  = [
             price: 3,
             customOptions: [
                   {
-                        name: "CUSTOMIZAR D1",
-                        price: 1
+                        name: "AÑADIR NUECES TROCEADAS",
+                        price: 1.5
                   },
                   {
-                        name: "CUSTOMIZAR D2",
+                        name: "AÑADIR TROZOS DE CHOCOLATE",
                         price: 2
                   },
                   {
@@ -415,11 +453,11 @@ const breakfastMainMenu  = [
             price: 4,
             customOptions: [
                   {
-                        name: "CUSTOMIZAR E1",
+                        name: "AÑADIR DE NATA",
                         price: 1
                   },
                   {
-                        name: "CUSTOMIZAR E2",
+                        name: "AÑADIR HELADO DE PISTACHO",
                         price: 2
                   },
                   {
@@ -432,12 +470,16 @@ const breakfastMainMenu  = [
             price: 5,
             customOptions: [
                   {
-                        name: "AÑADIR NATA",
-                        price: 1
+                        name: "AÑADIR PLÁTANO Y CHOCOLATE",
+                        price: 2.5
                   },
                   {
-                        name: "CUSTOMIZAR F2",
+                        name: "AÑADIR MERMELADA DE KIWI",
                         price: 2
+                  },
+                  {
+                        name: "AÑADIR MERMELADA DE MELOCOTÓN",
+                        price: 1.5
                   },
                   {
                         name: "NO, GRACIAS",
@@ -449,16 +491,12 @@ const breakfastMainMenu  = [
 
 const breakfastSidesMenu = [
       {
-            name: "TOSTA CON AGUACATE",
+            name: "TOSTADA CON AGUACATE",
             price: 3,
             customOptions: [
                   {
-                        name: "CUSTOMIZAR A1",
+                        name: "AÑADIR TOMATE",
                         price: 1
-                  },
-                  {
-                        name: "CUSTOMIZAR A2",
-                        price: 2
                   },
                   {
                         name: "NO, GRACIAS",
@@ -470,12 +508,12 @@ const breakfastSidesMenu = [
             price: 2.5,
             customOptions: [
                   {
-                        name: "CUSTOMIZAR B1",
-                        price: 1
+                        name: "RACIÓN GRANDE",
+                        price: 1.5
                   },
                   {
-                        name: "CUSTOMIZAR B2",
-                        price: 2
+                        name: "AÑADIR NATA",
+                        price: 0.5
                   },
                   {
                         name: "NO, GRACIAS",
@@ -487,12 +525,16 @@ const breakfastSidesMenu = [
             price: 2,
             customOptions: [
                   {
-                        name: "CUSTOMIZAR C1",
+                        name: "HACERLO DE CHOCOLATE BLANCO",
+                        price: 0.5
+                  },
+                  {
+                        name: "RELLENA DE CARAMELO",
                         price: 1
                   },
                   {
-                        name: "CUSTOMIZAR C2",
-                        price: 2
+                        name: "DOS UNIDADES",
+                        price: 1.5
                   },
                   {
                         name: "NO, GRACIAS",
@@ -504,12 +546,12 @@ const breakfastSidesMenu = [
             price: 3.5,
             customOptions: [
                   {
-                        name: "CUSTOMIZAR D1",
-                        price: 1
+                        name: "RACIÓN GRANDE",
+                        price: 1.5
                   },
                   {
-                        name: "CUSTOMIZAR D2",
-                        price: 2
+                        name: "FRUTAS TROPICALES",
+                        price: 1.5
                   },
                   {
                         name: "NO, GRACIAS",
@@ -521,11 +563,11 @@ const breakfastSidesMenu = [
             price: 3,
             customOptions: [
                   {
-                        name: "CUSTOMIZAR E1",
+                        name: "RELLENA DE CARAMELO",
                         price: 1
                   },
                   {
-                        name: "CUSTOMIZAR E2",
+                        name: "DOS UNIDADES",
                         price: 2
                   },
                   {
@@ -538,11 +580,11 @@ const breakfastSidesMenu = [
             price: 2.5,
             customOptions: [
                   {
-                        name: "CUSTOMIZAR F1",
-                        price: 1
+                        name: "GLASEADO ESPECIAL",
+                        price: 1.5
                   },
                   {
-                        name: "CUSTOMIZAR F2",
+                        name: "DOS UNIDADES",
                         price: 2
                   },
                   {
