@@ -231,13 +231,13 @@ const sidesMenu = [
                   },
                   {
                         name: "AÑADIR SALSA BARBACOA",
-                        price: 2,
-                        nightPrice: 5
+                        price: 1,
+                        nightPrice: 1.5
                   },
                   {
                         name: "AÑADIR SALSA BARBACOA",
-                        price: 2,
-                        nightPrice: 5
+                        price: 1,
+                        nightPrice: 1.5
                   },
                   {
                         name: "NO, GRACIAS",
@@ -296,13 +296,13 @@ const sidesMenu = [
             customOptions: [
                   {
                         name: "RACIÓN GRANDE",
-                        price: 1,
-                        nightPrice: 5
+                        price: 1.5,
+                        nightPrice: 2.5
                   },
                   {
                         name: "CON SALSA DE MIEL-MOSTAZA",
-                        price: 2,
-                        nightPrice: 5
+                        price: 1.5,
+                        nightPrice: 2
                   },
                   {
                         name: "NO, GRACIAS",
