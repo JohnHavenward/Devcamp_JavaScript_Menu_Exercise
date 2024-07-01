@@ -1,76 +1,117 @@
 
 
+// MESSAGES & COMMENTS
+
+const askMessages = [
+      "BIENVENIDO AL RESTAURANTE BOTTEGA. ¿PARA QUÉ HORARIO TE GUSTARÍA HACER LA RESERVA?",
+      "EL MENÚ CONSTA DE UN PLATO PRINCIPAL  Y DOS ACOMPAÑANTES. ¿CUAL DE LOS SIGUIENTES PLATOS PRINCIPALES QUIERES ELEGIR?",
+      "SI LO DESEAS PUEDES MODIFICAR EL PLATO POR UN PEQUEÑO COSTE AÑADIDO.",
+      "EL PRECIO DEL PLATO SERÍA (precio). ¿QUÉ ACOMPAÑANTE TE GUSTARÍA ELEGIR?",
+      "¿TE GUSTARÍA HACER ALGÚN CAMBIO A ESTE ACOMPAÑANTE?",
+      "ESTE ACOMPAÑANTE SERÍA (precio). ¿CUAL TE GUSTARÍA QUE SEA EL OTRO?",
+      "¿TE GUSTARÍA REALIZAR ALGUNA MODIFICACIÓN?",
+      "SU PRECIO SERÍA (precio). Y POR ÚLTIMO YA, ¿QUÉ TE GUSTARÍA TOMAR PARA BEBER?",
+      "EL PRECIO TOTAL SERÍA (precio). ESPERO QUE DISFRUTES DE LA COMIDA Y LA ESTANCIA EN NUESTRO RESTAURANTE. ¡BUEN PROVECHO!"
+]
+
+
+const simpleComments = [
+      "ES MI OPCIÓN FAVORITA  DE LA CARTA.",
+      "BUENA ELECCIÓN, SEGURO QUE TE GUSTA MUCHO.",
+      "ACABAMOS DE AÑADIR ESA OPCIÓN A LA CARTA Y ESTÁ GUSTANDO MUCHO.",
+      "ESPERO QUE TENGAS MUCHA HAMBRE PORQUE LA RACIÓN ES MUY GRANDE.",
+      "BUENA ELECCIÓN.",
+      "SEGURO QUE TE ENCANTA.",
+      "ACABAMOS DE MEJORAR LA RECETA Y ESTÁ TENIENDO MUCHO ÉXITO.",
+      "ESA ES UNA ELECCIÓN MUY POPULAR ENTRE NUESTROS CLIENTES.",
+      "MUCHOS CLIENTES SIEMPRE HACEN ESA ELECCIÓN CADA VEZ QUE NOS VISITAN."
+]
+
+
+const complexComments_AB = [
+      "(A) Y (B) SON SIN DUDA UNA COMBINACIÓN PERFECTA.",
+      "(A) Y (B) SON LAS DOS OPCIONES PREFERIDAS DE NUESTROS CLIENTES.",
+      "SIEMPRE RECOMIENDO ELEGIR (B) CON (A).",
+      "(A) ES NUESTRO PLATO ESTRELLA Y COMBINA MUY BIEN CON (B)."
+]
+
+
+const complexComments_ABC = [
+      "(B) Y (C) SON BUENOS ACOMPAÑANTES PARA (A).",
+      "(A), (B) Y (C) SON UNA DE LAS COMBINACIONES MÁS POPULARES ENTRE NUESTROS CLIENTES.",
+      "(B) Y (C) SON LOS ACOMPAÑANTES QUE MÁS GUSTAN.",
+      "(C) ES UN ACIERTO PARA ACOMPAÑAR A (A) "
+]
+
+
+
+
+
 // LUNCH & DINNER
 
 const mainMenu = [
       {
-            name: "PLATO A",
+            name: "HAMBURGUESA COMPLETA",
             price: 1.5,
             nightPrice: 2.5,
             customOptions: [
                   {
-                        name: "CUSTOMIZAR A1",
+                        name: "EXTRA DE QUESO",
                         price: 1,
                         nightPrice: 5
                   },
                   {
-                        name: "CUSTOMIZAR A2",
+                        name: "HACERLA DOBLE",
                         price: 2,
                         nightPrice: 5
                   },
                   {
-                        name: "CUSTOMIZAR A3",
-                        price: 3,
-                        nightPrice: 5
+                        name: "NO, GRACIAS",
                   }
             ]
       },
       {
-            name: "PLATO B",
+            name: "ENSALADA CÉSAR",
             price: 2,
             nightPrice: 3,
             customOptions: [
                   {
-                        name: "CUSTOMIZAR B1",
+                        name: "CON CEBOLLA FRITA",
                         price: 1,
                         nightPrice: 5
                   },
                   {
-                        name: "CUSTOMIZAR B2",
+                        name: "CON SALSA DE MIEL-MOSTAZA",
                         price: 2,
                         nightPrice: 5
                   },
                   {
-                        name: "CUSTOMIZAR B3",
-                        price: 3,
-                        nightPrice: 5
+                        name: "NO, GRACIAS",
                   }
             ]
       },
       {
-            name: "PLATO C",
+            name: "COSTILLAS DE CERDO AHUMADAS",
             price: 2.5,
             nightPrice: 3.5,
             customOptions: [
                   {
-                        name: "CUSTOMIZAR C1",
+                        name: "CON MIEL",
                         price: 1,
                         nightPrice: 5
                   },
                   {
-                        name: "CUSTOMIZAR C2",
+                        name: "CON SALSA BARBACOA",
                         price: 2,
                         nightPrice: 5
                   },
                   {
-                        name: "CUSTOMIZAR C3",
-                        price: 3,
-                        nightPrice: 5
+                        name: "NO, GRACIAS",
                   }
             ]
       },
       {
-            name: "PLATO D",
+            name: "BOCADILLO DE PECHUGA Y QUESO",
             price: 3,
             nightPrice: 4,
             customOptions: [
@@ -85,14 +126,12 @@ const mainMenu = [
                         nightPrice: 5
                   },
                   {
-                        name: "CUSTOMIZAR D3",
-                        price: 3,
-                        nightPrice: 5
+                        name: "NO, GRACIAS",
                   }
             ]
       },
       {
-            name: "PLATO E",
+            name: "SANDWICH VEGETAL",
             price: 3,
             nightPrice: 4,
             customOptions: [
@@ -107,19 +146,17 @@ const mainMenu = [
                         nightPrice: 5
                   },
                   {
-                        name: "CUSTOMIZAR E3",
-                        price: 3,
-                        nightPrice: 5
+                        name: "NO, GRACIAS",
                   }
             ]
       },
       {
-            name: "PLATO F",
+            name: "PIZZA CARBONARA",
             price: 3,
             nightPrice: 4,
             customOptions: [
                   {
-                        name: "CUSTOMIZAR F1",
+                        name: "HACERLA GRANDE",
                         price: 1,
                         nightPrice: 5
                   },
@@ -129,9 +166,7 @@ const mainMenu = [
                         nightPrice: 5
                   },
                   {
-                        name: "CUSTOMIZAR F3",
-                        price: 3,
-                        nightPrice: 5
+                        name: "NO, GRACIAS",
                   }
             ]
       },
@@ -140,12 +175,12 @@ const mainMenu = [
 
 const sidesMenu = [
       {
-            name: "ACOMPAÑANTE A",
+            name: "NACHOS GRATINADOS",
             price: 1.5,
             nightPrice: 2.5,
             customOptions: [
                   {
-                        name: "CUSTOMIZAR A1",
+                        name: "RACIÓN GRANDE",
                         price: 1,
                         nightPrice: 5
                   },
@@ -155,14 +190,12 @@ const sidesMenu = [
                         nightPrice: 5
                   },
                   {
-                        name: "CUSTOMIZAR A3",
-                        price: 3,
-                        nightPrice: 5
+                        name: "NO, GRACIAS",
                   }
             ]
       },
       {
-            name: "ACOMPAÑANTE B",
+            name: "PATATAS FRITAS",
             price: 2,
             nightPrice: 3,
             customOptions: [
@@ -177,80 +210,77 @@ const sidesMenu = [
                         nightPrice: 5
                   },
                   {
-                        name: "CUSTOMIZAR B3",
-                        price: 3,
-                        nightPrice: 5
+                        name: "NO, GRACIAS",
                   }
             ]
       },
       {
-            name: "ACOMPAÑANTE C",
+            name: "ALITAS DE POLLO",
             price: 2.5,
             nightPrice: 3.5,
             customOptions: [
                   {
-                        name: "CUSTOMIZAR C1",
+                        name: "RACIÓN GRANDE",
                         price: 1,
                         nightPrice: 5
                   },
                   {
-                        name: "CUSTOMIZAR C2",
+                        name: "CON SALSA BARBACOA",
                         price: 2,
                         nightPrice: 5
                   },
                   {
-                        name: "CUSTOMIZAR C3",
-                        price: 3,
-                        nightPrice: 5
+                        name: "NO, GRACIAS",
                   }
             ]
       },
       {
-            name: "ACOMPAÑANTE D",
+            name: "ARITOS DE CEBOLLA",
             price: 3,
             nightPrice: 4,
             customOptions: [
                   {
-                        name: "CUSTOMIZAR D1",
+                        name: "RACIÓN GRANDE",
                         price: 1,
                         nightPrice: 5
                   },
                   {
-                        name: "CUSTOMIZAR D2",
+                        name: "CON SALSA PICANTE",
                         price: 2,
                         nightPrice: 5
                   },
                   {
-                        name: "CUSTOMIZAR D3",
-                        price: 3,
+                        name: "CON SALSA BARBACOA",
+                        price: 2,
                         nightPrice: 5
+                  },
+                  {
+                        name: "NO, GRACIAS",
                   }
             ]
       },
       {
-            name: "ACOMPAÑANTE E",
+            name: "FINGERS DE QUESO",
             price: 3,
             nightPrice: 4,
             customOptions: [
                   {
-                        name: "CUSTOMIZAR E1",
+                        name: "RACIÓN GRANDE",
                         price: 1,
                         nightPrice: 5
                   },
                   {
-                        name: "CUSTOMIZAR E2",
+                        name: "CON SALSA DE MIEL-MOSTAZA",
                         price: 2,
                         nightPrice: 5
                   },
                   {
-                        name: "CUSTOMIZAR E3",
-                        price: 3,
-                        nightPrice: 5
+                        name: "NO, GRACIAS",
                   }
             ]
       },
       {
-            name: "ACOMPAÑANTE F",
+            name: "PURÉ DE PATATA",
             price: 3,
             nightPrice: 4,
             customOptions: [
@@ -265,9 +295,7 @@ const sidesMenu = [
                         nightPrice: 5
                   },
                   {
-                        name: "CUSTOMIZAR F3",
-                        price: 3,
-                        nightPrice: 5
+                        name: "NO, GRACIAS",
                   }
             ]
       }
@@ -276,36 +304,38 @@ const sidesMenu = [
 
 const beveragesMenu = [
       {
-            name: "BEBIDA A",
-            price: 1.5,
-            nightPrice: 2.5,
-      },
-      {
-            name: "BEBIDA B",
-            price: 2,
+            name: "COCA-COLA",
+            price: 2.5,
             nightPrice: 3,
       },
       {
-            name: "BEBIDA C",
+            name: "VINO",
             price: 2.5,
+            nightPrice: 3,
+      },
+      {
+            name: "CERVEZA",
+            price: 3.5,
+            nightPrice: 4,
+      },
+      {
+            name: "TÉ HELADO",
+            price: 2.5,
+            nightPrice: 3,
+      },
+      {
+            name: "ZUMO DE PIÑA",
+            price: 3,
             nightPrice: 3.5,
       },
       {
-            name: "BEBIDA D",
-            price: 3,
-            nightPrice: 4,
-      },
-      {
-            name: "BEBIDA E",
-            price: 3,
-            nightPrice: 4,
-      },
-      {
-            name: "BEBIDA F",
-            price: 3,
-            nightPrice: 4,
+            name: "AGUA",
+            price: 1.5,
+            nightPrice: 2,
       }
 ];
+
+
 
 
 
@@ -313,11 +343,11 @@ const beveragesMenu = [
 
 const breakfastMainMenu  = [
       {
-            name: "DESAYUNO A",
-            price: 1.5,
+            name: "HUEVOS FRITOS CON BACON",
+            price: 3.5,
             customOptions: [
                   {
-                        name: "CUSTOMIZAR A1",
+                        name: "HACERLOS REVUELTOS",
                         price: 1
                   },
                   {
@@ -325,35 +355,33 @@ const breakfastMainMenu  = [
                         price: 2
                   },
                   {
-                        name: "CUSTOMIZAR A3",
-                        price: 3
+                        name: "NO, GRACIAS",
                   }
             ]
       },
       {
-            name: "DESAYUNO B",
-            price: 2,
+            name: "TORTITAS CON MANTEQUILLA",
+            price: 4.5,
             customOptions: [
                   {
-                        name: "CUSTOMIZAR B1",
+                        name: "AÑADIR SIROPE DE ARCE",
                         price: 1
                   },
                   {
-                        name: "CUSTOMIZAR B2",
+                        name: "CON NATA MONTADA",
                         price: 2
                   },
                   {
-                        name: "CUSTOMIZAR B3",
-                        price: 3
+                        name: "NO, GRACIAS",
                   }
             ]
       },
       {
-            name: "DESAYUNO C",
-            price: 2.5,
+            name: "GOFRES CON NATA",
+            price: 5.5,
             customOptions: [
                   {
-                        name: "CUSTOMIZAR C1",
+                        name: "AÑADIR SALSA DE ARÁNDANOS",
                         price: 1
                   },
                   {
@@ -361,13 +389,12 @@ const breakfastMainMenu  = [
                         price: 2
                   },
                   {
-                        name: "CUSTOMIZAR C3",
-                        price: 3
+                        name: "NO, GRACIAS",
                   }
             ]
       },
       {
-            name: "DESAYUNO D",
+            name: "BOWL DE CEREALES",
             price: 3,
             customOptions: [
                   {
@@ -379,14 +406,13 @@ const breakfastMainMenu  = [
                         price: 2
                   },
                   {
-                        name: "CUSTOMIZAR D3",
-                        price: 3
+                        name: "NO, GRACIAS",
                   }
             ]
       },
       {
-            name: "DESAYUNO E",
-            price: 3,
+            name: "TOSTADAS FRANCESAS",
+            price: 4,
             customOptions: [
                   {
                         name: "CUSTOMIZAR E1",
@@ -397,17 +423,16 @@ const breakfastMainMenu  = [
                         price: 2
                   },
                   {
-                        name: "CUSTOMIZAR E3",
-                        price: 3
+                        name: "NO, GRACIAS",
                   }
             ]
       },
       {
-            name: "DESAYUNO F",
-            price: 3,
+            name: "CROISSANTS A LA PLANCHA",
+            price: 5,
             customOptions: [
                   {
-                        name: "CUSTOMIZAR F1",
+                        name: "AÑADIR NATA",
                         price: 1
                   },
                   {
@@ -415,8 +440,7 @@ const breakfastMainMenu  = [
                         price: 2
                   },
                   {
-                        name: "CUSTOMIZAR F3",
-                        price: 3
+                        name: "NO, GRACIAS",
                   }
             ]
       },
@@ -425,8 +449,8 @@ const breakfastMainMenu  = [
 
 const breakfastSidesMenu = [
       {
-            name: "DES. ACOMPAÑANTE A",
-            price: 1.5,
+            name: "TOSTA CON AGUACATE",
+            price: 3,
             customOptions: [
                   {
                         name: "CUSTOMIZAR A1",
@@ -437,14 +461,13 @@ const breakfastSidesMenu = [
                         price: 2
                   },
                   {
-                        name: "CUSTOMIZAR A3",
-                        price: 3
+                        name: "NO, GRACIAS",
                   }
             ]
       },
       {
-            name: "DES. ACOMPAÑANTE B",
-            price: 2,
+            name: "BROWNIE DE CHOCOLATE",
+            price: 2.5,
             customOptions: [
                   {
                         name: "CUSTOMIZAR B1",
@@ -455,14 +478,13 @@ const breakfastSidesMenu = [
                         price: 2
                   },
                   {
-                        name: "CUSTOMIZAR B3",
-                        price: 3
+                        name: "NO, GRACIAS",
                   }
             ]
       },
       {
-            name: "DES. ACOMPAÑANTE C",
-            price: 2.5,
+            name: "COOKIE DE CHOCOLATE",
+            price: 2,
             customOptions: [
                   {
                         name: "CUSTOMIZAR C1",
@@ -473,14 +495,13 @@ const breakfastSidesMenu = [
                         price: 2
                   },
                   {
-                        name: "CUSTOMIZAR C3",
-                        price: 3
+                        name: "NO, GRACIAS",
                   }
             ]
       },
       {
-            name: "DES. ACOMPAÑANTE D",
-            price: 3,
+            name: "FRUTAS CORTADAS",
+            price: 3.5,
             customOptions: [
                   {
                         name: "CUSTOMIZAR D1",
@@ -491,13 +512,12 @@ const breakfastSidesMenu = [
                         price: 2
                   },
                   {
-                        name: "CUSTOMIZAR D3",
-                        price: 3
+                        name: "NO, GRACIAS",
                   }
             ]
       },
       {
-            name: "DES. ACOMPAÑANTE E",
+            name: "MUFFIN DE CHOCOLATE",
             price: 3,
             customOptions: [
                   {
@@ -509,14 +529,13 @@ const breakfastSidesMenu = [
                         price: 2
                   },
                   {
-                        name: "CUSTOMIZAR E3",
-                        price: 3
+                        name: "NO, GRACIAS",
                   }
             ]
       },
       {
-            name: "DES. ACOMPAÑANTE F",
-            price: 3,
+            name: "DONUT GLASEADO",
+            price: 2.5,
             customOptions: [
                   {
                         name: "CUSTOMIZAR F1",
@@ -527,8 +546,7 @@ const breakfastSidesMenu = [
                         price: 2
                   },
                   {
-                        name: "CUSTOMIZAR F3",
-                        price: 3
+                        name: "NO, GRACIAS",
                   }
             ]
       }
@@ -537,79 +555,32 @@ const breakfastSidesMenu = [
 
 const breakfastBeveragesMenu = [
       {
-            name: "DES. BEBIDA A",
-            price: 1.5,
-      },
-      {
-            name: "DES. BEBIDA B",
-            price: 2,
-      },
-      {
-            name: "DES. BEBIDA C",
+            name: "CAFÉ CON LECHE",
             price: 2.5,
       },
       {
-            name: "DES. BEBIDA D",
+            name: "ZUMO DE NARANJA",
             price: 3,
       },
       {
-            name: "DES. BEBIDA E",
+            name: "TÉ VERDE",
+            price: 2,
+      },
+      {
+            name: "CHOCOLATE CALIENTE",
+            price: 4,
+      },
+      {
+            name: "BATIDO DE VAINILLA",
             price: 3,
       },
       {
-            name: "DES. BEBIDA F",
-            price: 3,
+            name: "AGUA",
+            price: 1.5,
       }
 ];
 
 
-
-// COMMENTS
-
-const askMessages = [
-      "BIENVENIDO. ELIGE HORA DE COMER",
-      "ELIGE PLATO PRINCIPAL",
-      "PERSONALIZAR PLATO PRINCIPAL?",
-      "EL PRECIO ES (precio)$. ELIGE PRIMER ACOMPAÑANTE",
-      "PERSONALIZAR PRIMER ACOMPAÑANTE?",
-      "EL PRECIO ES (precio)$. ELIGE SEGUNDO ACOMPAÑANTE",
-      "PERSONALIZAR SEGUNDO ACOMPAÑANTE?",
-      "EL PRECIO ES (precio)$. ELIGE LA BEBIDA",
-      "EL PRECIO TOTAL ES (precio)$. QUE APROVECHE"
-]
-
-
-const simpleComments = [
-      "COMENTARIO 1",
-      "COMENTARIO 2",
-      "COMENTARIO 3",
-      "COMENTARIO 4",
-      "COMENTARIO 5",
-      "COMENTARIO 6",
-      "COMENTARIO 7"
-]
-
-
-const complexComments_AB = [
-      "(A) y (B) COMENTARIO 1",
-      "(A) y (B) COMENTARIO 2",
-      "(A) y (B) COMENTARIO 3",
-      "(A) y (B) COMENTARIO 4",
-      "(A) y (B) COMENTARIO 5",
-      "(A) y (B) COMENTARIO 6",
-      "(A) y (B) COMENTARIO 7",
-]
-
-
-const complexComments_ABC = [
-      "(A) y (C) COMENTARIO 1",
-      "(A) y (C) COMENTARIO 2",
-      "(A) y (C) COMENTARIO 3",
-      "(A) y (C) COMENTARIO 4",
-      "(A) y (C) COMENTARIO 5",
-      "(A) y (C) COMENTARIO 6",
-      "(A) y (C) COMENTARIO 7",
-]
 
 
 
@@ -618,21 +589,21 @@ const complexComments_ABC = [
 const mealTimeMenu = [
       {
             name: "DESAYUNO",
-            nightPrice: false,
+            useNightPrice: false,
             mainMenu: breakfastMainMenu,
             sidesMenu: breakfastSidesMenu,
             beveragesMenu: breakfastBeveragesMenu
       },
       {
             name: "COMIDA",
-            nightPrice: false,
+            useNightPrice: false,
             mainMenu: mainMenu,
             sidesMenu: sidesMenu,
             beveragesMenu: beveragesMenu
       },
       {
             name: "CENA",
-            nightPrice: true,
+            useNightPrice: true,
             mainMenu: mainMenu,
             sidesMenu: sidesMenu,
             beveragesMenu: beveragesMenu

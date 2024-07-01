@@ -41,7 +41,7 @@ let selectedMainMenu;
 let selectedSidesMenu;
 let selectedBeveragesMenu;
 
-let useNightPrice = false;
+let priceKey;
 let itemPrice;
 let totalPrice = 0;
 
@@ -54,7 +54,7 @@ let selectedFirstSideDish;
 let selectedSecondSideDish;
 
 
-let typeEffectSpeed = 50;
+let typeEffectSpeed = 30;
 let typeEffectTimeoutID;
 
 
@@ -124,7 +124,10 @@ function displayOptions(selectedMenu, customization) {
       for (let i = 0; i < optionDisplayElements.length; i++ ) {
       
             if (i < options.length) {
-                  typeEffect(optionDisplayElements[i], options[i].name, 0);
+                  
+                  let priceTag = options[i][priceKey] != undefined ?  `  [${formatPrice(options[i][priceKey])}]` : "";
+                  
+                  typeEffect(optionDisplayElements[i], options[i].name + priceTag, 0);
                   
                   if (!customization && selectedMenu[i].name == selectedFirstSideDish && selectedMenu == selectedSidesMenu) {
                         optionDisplayElements[i].classList.add("inactive");
@@ -222,7 +225,8 @@ function confirmSelection() {
 
 function assignMealtimeMenus() {
       
-      useNightPrice = mealTimeMenu[selectedOption].nightPrice;
+      priceKey = mealTimeMenu[selectedOption].useNightPrice ? "nightPrice" : "price";
+
       selectedMainMenu = mealTimeMenu[selectedOption].mainMenu;
       selectedSidesMenu = mealTimeMenu[selectedOption].sidesMenu;
       selectedBeveragesMenu = mealTimeMenu[selectedOption].beveragesMenu;
@@ -233,10 +237,15 @@ function assignMealtimeMenus() {
 
 function calculateItemPrice(selectedMenu) {
       
-      let priceKey = useNightPrice ? "nightPrice" : "price";
-      
-      if (selectedMenu != selectedBeveragesMenu) {
-            itemPrice = selectedMenu[lastSelectedOption][priceKey] + selectedMenu[lastSelectedOption].customOptions[selectedOption][priceKey];
+      if (selectedMenu != selectedBeveragesMenu) {   
+            itemPrice = selectedMenu[lastSelectedOption].customOptions[selectedOption][priceKey];
+            
+            if (itemPrice == undefined) {
+                  itemPrice = selectedMenu[lastSelectedOption][priceKey];
+                  
+            } else {
+                  itemPrice += selectedMenu[lastSelectedOption][priceKey];
+            }
             
       } else {
             itemPrice = selectedMenu[selectedOption][priceKey];
@@ -251,11 +260,19 @@ function calculateItemPrice(selectedMenu) {
 function createMessage(needComment) {
       
       let price = roundCounter < 8 ? itemPrice : totalPrice;
-      price = (Math.round(price * 100) / 100).toFixed(2); 
+      price = formatPrice(price); 
       
       let message = askMessages[roundCounter].replace("(precio)", price)
       
-      return (needComment ? makeComment() + message : message);
+      return (needComment ? makeComment() + " " + message : message);
+      
+}
+
+
+
+function formatPrice(rawPrice) {
+      
+      return (Math.round(rawPrice * 100) / 100).toFixed(2) + "$";
       
 }
 
@@ -263,11 +280,11 @@ function createMessage(needComment) {
 
 function makeComment() {
       
-      if (Math.random() < 0.01 || !selectedFirstSideDish) {
+      if (Math.random() < 0.5 || !selectedFirstSideDish) {
             return simpleComments[Math.floor(Math.random() * simpleComments.length)];
             
       } else {
-            let complexComments = !selectedSecondSideDish ? complexComments_AB : complexComments_AB.concat(complexComments_ABC);
+            let complexComments = !selectedSecondSideDish ? complexComments_AB : complexComments_ABC;
             
             let comment = complexComments[Math.floor(Math.random() * complexComments.length)];
             
